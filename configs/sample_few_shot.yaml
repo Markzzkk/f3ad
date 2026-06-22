@@ -1,0 +1,54 @@
+# ======================
+# Path Configuration for Few-Shot Dataset Generation
+# ======================
+source: /path/to/source_dataset
+target: /path/to/output_fewshot_dataset
+
+# ======================
+# Basic Parameters
+# ======================
+dataset: mvtec3d        # generic | mvtec3d | eyecandies
+num_samples: 10
+seed: 42              
+rename_images: false
+
+user_config: ""
+
+
+# ======================
+# generic（MVTec AD / ViSA）
+# ======================
+train_subpaths:
+  - train/good
+  - train/ok
+
+allowed_exts:
+  - .png
+  - .jpg
+  - .jpeg
+
+# ======================
+# MVTec 3D
+# ======================
+rgb_train_subpath: train/good/rgb
+depth_train_subpath: train/good/xyz
+
+allowed_rgb_exts:
+  - .png
+  - .jpg
+
+allowed_depth_exts:
+  - .tiff
+  - .tif
+  - .png
+
+target_rgb_dirname: rgb
+target_depth_dirname: xyz
+copy_calibration: true
+
+# ======================
+# EyeCandies
+# ======================
+rgb_glob: train/data/*_image_0.png
+depth_rel_template: train/data/{prefix}_depth.png
+eyecandies_target_depth_dirname: depth
