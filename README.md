@@ -32,12 +32,14 @@ Before we start, please make sure you have the rights to use [DINOv3](https://gi
 
 After downloading zip files of eyecandies, run the commands below:
 
+```bash
 mkdir -p /path/to/f3ad/Eyecandies
 
 for file in /你的下载目录/*.zip; do
 
     unzip "$file" -d /path/to/f3ad/Eyecandies
 done
+```
 
 Run a demo on MVTec-3D AD 
 ```bash
