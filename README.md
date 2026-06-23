@@ -30,6 +30,15 @@ Before we start, please make sure you have the rights to use [DINOv3](https://gi
 |**MVTec 3D AD**|[⬇️ <u>link</u>](https://drive.google.com/file/d/11Kh4zPpfwgGePrwLwsGMUD70CfNL3aW5/view?usp=sharing)|
 |**Eyecandies**  |[⬇️ <u>link</u>](https://drive.google.com/file/d/1g-eCfet8ccnQYHhT62vmIjmW6xJzqudH/view?usp=drive_link)|
 
+After downloading zip files of eyecandies, run the commands below:
+
+mkdir -p /path/to/f3ad/Eyecandies
+
+for file in /你的下载目录/*.zip; do
+
+    unzip "$file" -d /path/to/f3ad/Eyecandies
+done
+
 Run a demo on MVTec-3D AD 
 ```bash
 python main.py mode=demo app=test testing.segmentation_vis=True data.dataset=mvtec3d data.data_name=mvtec3d_2shot data.test_root=assets/mvtec3d
